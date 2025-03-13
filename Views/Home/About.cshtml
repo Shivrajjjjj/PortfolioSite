@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "About Me";
+}
+
+<div class="container mt-4">
+    <h2>About Me</h2>
+
+    @if (ViewBag.Description != null)
+    {
+        <p>@ViewBag.Description</p>
+    }
+    else
+    {
+        <p class="text-muted">No details available.</p>
+    }
+</div>

@@ -1,0 +1,405 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@(ViewBag.Title ?? "Shivraj Randive | Full-Stack Developer")</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <!-- Add Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Add Bootstrap JS and Popper.js (required for Bootstrap's dropdown, tabs, etc.) -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+    <style>
+        /* Section Title */
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        /* Skill Box */
+        .skill-box {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            .skill-box:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            }
+
+        .skill-title {
+            font-size: 1.5rem;
+            color: #007BFF;
+            margin-bottom: 10px;
+        }
+
+        /* List Styling */
+        ul.list-unstyled {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+            ul.list-unstyled li {
+                margin-bottom: 8px;
+            }
+
+                ul.list-unstyled li i {
+                    color: #28a745;
+                    margin-right: 10px;
+                }
+
+        /* Responsive Design */
+        .media (max-width: 768px) {
+            .skills-section
+
+        {
+            padding: 20px;
+        }
+
+        .skill-box {
+            padding: 15px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+        }
+
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .navbar {
+            background-color: #212529;
+            padding: 1rem;
+        }
+        .nav-link {
+            cursor: pointer;
+        }
+
+        .tab-content .tab-pane {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-top: none;
+        }
+
+        .navbar-brand, .nav-link {
+            color: #fff !important;
+            font-weight: bold;
+        }
+
+        .navbar-toggler {
+            border-color: #fff;
+        }
+
+        .hero-section {
+            background: #007bff;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            border-bottom: 4px solid #212529;
+        }
+
+            .hero-section h1 {
+                font-size: 3.5rem;
+                font-weight: bold;
+            }
+
+            .hero-section p {
+                font-size: 1.25rem;
+            }
+
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+            .card:hover {
+                transform: scale(1.05);
+                transition: 0.3s;
+            }
+
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: bold;
+        }
+
+        .experience-item, .project-item {
+            margin-bottom: 40px;
+        }
+
+        .footer {
+            background-color: #212529;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .skills-section {
+            background-color: #ffffff;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .progress-bar {
+            background-color: #007bff;
+        }
+
+        .contact-section {
+            background-color: #f8f9fa;
+            padding: 60px 0;
+        }
+
+        .contact-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+            .contact-btn:hover {
+                background-color: #0056b3;
+            }
+
+        .nav-tabs .nav-link {
+            background-color: #f8f9fa; /* Light background color */
+            color: #333; /* Text color */
+            border-radius: 10px; /* Rounded corners */
+        }
+
+            .nav-tabs .nav-link:hover {
+                background-color: #007bff; /* Blue color on hover */
+                color: white;
+            }
+
+            .nav-tabs .nav-link.active {
+                background-color: #28a745; /* Green for active tab */
+                color: white;
+                border-color: #28a745; /* Border color for active tab */
+    </style>
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            @Html.ActionLink("Shivraj Randive", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Projects", "Projects", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <h1>Welcome to My Portfolio</h1>
+        <p>Full-Stack Developer | ASP.NET | SQL | UI/UX | Cloud</p>
+        <a href="/Home/Projects" class="btn btn-light btn-lg mt-3">View My Projects</a>
+    </section>
+    <div class="container mt-5">
+        <!-- Render the body content of the view here -->
+        @RenderBody()
+    </div>
+    <!-- Professional Experience Section -->
+    <section class="container experience-section">
+        <h2 class="section-title text-center" data-aos="fade-up">Professional Experience</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-8 experience-item" data-aos="fade-up">
+                <div class="card p-4 shadow-lg">
+                    <h4 class="card-title">Software Developer | Three Star Infotech, Kolhapur (Aug 2023 – June 2024)</h4>
+                    <p class="card-text">Focused on automating banking operations and optimizing backend systems for enhanced performance.</p>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-cogs"></i> <strong>Backend Optimization:</strong> Improved system efficiency, reducing query execution time by 30% through .NET, MVC, and SQL Server.</li>
+                        <li><i class="fas fa-robot"></i> <strong>Automation:</strong> Automated key business processes, including stationary management, reducing manual errors by 20% and enhancing operational speed.</li>
+                        <li><i class="fas fa-lock"></i> <strong>Security:</strong> Implemented Role-Based Access Control (RBAC), strengthening security protocols and reducing unauthorized access incidents by 25%.</li>
+                        <li><i class="fas fa-desktop"></i> <strong>UI/UX Design:</strong> Enhanced user engagement by 15% through an improved UI/UX design that made the interface more intuitive.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Projects Section -->
+    <section class="container projects-section">
+        <h2 class="section-title text-center" data-aos="fade-up">Key Projects</h2>
+        <div class="row justify-content-center">
+            <!-- Forts Tourism Website -->
+            <div class="col-md-6 project-item" data-aos="fade-up">
+                <div class="card p-4 shadow-lg">
+                    <h5>Forts Tourism Website</h5>
+                    <p>Automated tourism website with integrated online booking and error-free data entry to ensure a smooth user experience.</p>
+                    <ul>
+                        <li><i class="fas fa-calendar-check"></i> Developed an automated booking system, reducing downtime by 50%.</li>
+                        <li><i class="fas fa-check-circle"></i> Implemented automated validation checks to ensure accurate data entry.</li>
+                        <li>Technologies: ASP.NET Core, SQL Server, HTML, CSS, JavaScript</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Computer Institute System -->
+            <div class="col-md-6 project-item" data-aos="fade-up">
+                <div class="card p-4 shadow-lg">
+                    <h5>Computer Institute System</h5>
+                    <p>Automated student management and course tracking system, improving data integrity and operational efficiency.</p>
+                    <ul>
+                        <li><i class="fas fa-users-cog"></i> Automated student data entry and course scheduling.</li>
+                        <li><i class="fas fa-sync-alt"></i> Reduced administrative overhead and improved system accuracy by automating data management.</li>
+                        <li>Technologies: ASP.NET MVC, SQL Server</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Webform Project (Shwet Shiva Printing Services) -->
+            <div class="col-md-6 project-item" data-aos="fade-up">
+                <div class="card p-4 shadow-lg">
+                    <h5>Webform Project (Shwet Shiva Printing Services)</h5>
+                    <p>Created an automated form management system, enhancing the workflow of printing service requests and tracking.</p>
+                    <ul>
+                        <li><i class="fas fa-pen-square"></i> Automated webform submissions and document tracking.</li>
+                        <li><i class="fas fa-tasks"></i> Streamlined business operations by automating key tasks within the printing process.</li>
+                        <li>Technologies: ASP.NET MVC, SQL Server</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Digital Banking Solution -->
+            <div class="col-md-6 project-item" data-aos="fade-up">
+                <div class="card p-4 shadow-lg">
+                    <h5>Digital Banking Solution</h5>
+                    <p>Implemented an automated banking system that reduces downtime and enhances the user experience through optimized queries and virtual services.</p>
+                    <ul>
+                        <li><i class="fas fa-credit-card"></i> Automated transactions and loan request processing, reducing errors by 50%.</li>
+                        <li><i class="fas fa-users"></i> Improved user engagement through automation of account statement and transaction history features.</li>
+                        <li>Technologies: Python, Flask, MySQL, JavaScript</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="skills-section text-center mb-5" data-aos="fade-up">
+        <h2 class="section-title">My Skills</h2>
+
+        <!-- Nav Tabs -->
+        <ul class="nav nav-tabs justify-content-center" id="skillsTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="backend-tab" data-bs-toggle="tab" href="#backend" role="tab" aria-controls="backend" aria-selected="true">Backend Development</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="frontend-tab" data-bs-toggle="tab" href="#frontend" role="tab" aria-controls="frontend" aria-selected="false">Frontend Development</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="databases-tab" data-bs-toggle="tab" href="#databases" role="tab" aria-controls="databases" aria-selected="false">Databases</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="software-tab" data-bs-toggle="tab" href="#software" role="tab" aria-controls="software" aria-selected="false">Software Development</a>
+            </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content mt-4" id="skillsTabContent">
+            <!-- Backend Development Tab Content -->
+            <div class="tab-pane fade show active" id="backend" role="tabpanel" aria-labelledby="backend-tab">
+                <h5>Backend Development</h5>
+                <p>Backend development focuses on the server-side logic, databases, and overall structure of the website or application. The backend ensures everything works behind the scenes and that the front-end interacts correctly with the database.</p>
+                <ul>
+                    <li><strong>ASP.NET</strong>: Framework for building dynamic web applications with C# and .NET</li>
+                    <li><strong>.NET Core</strong>: Cross-platform, high-performance framework for building modern applications</li>
+                    <li><strong>Python (Flask)</strong>: Micro web framework for building lightweight and efficient backend applications</li>
+                    <li><strong>Java</strong>: Popular object-oriented programming language for enterprise-level applications</li>
+                    <li><strong>MVC Framework</strong>: Design pattern used to separate application logic for better scalability and maintainability</li>
+                </ul>
+            </div>
+
+            <!-- Frontend Development Tab Content -->
+            <div class="tab-pane fade" id="frontend" role="tabpanel" aria-labelledby="frontend-tab">
+                <h5>Frontend Development</h5>
+                <p>Frontend development deals with the client-side of an application. It ensures the user interface is intuitive, responsive, and visually appealing, providing the user with an excellent experience.</p>
+                <ul>
+                    <li><strong>JavaScript</strong>: Dynamic programming language used to create interactive and animated web elements</li>
+                    <li><strong>HTML</strong>: Markup language used to structure web content</li>
+                    <li><strong>CSS</strong>: Stylesheet language used to format the layout and design of web pages</li>
+                    <li><strong>UI/UX Design</strong>: Focuses on designing a user-friendly interface and ensuring smooth user experiences</li>
+                </ul>
+            </div>
+
+            <!-- Databases Tab Content -->
+            <div class="tab-pane fade" id="databases" role="tabpanel" aria-labelledby="databases-tab">
+                <h5>Databases</h5>
+                <p>Databases are used to store, manage, and retrieve data efficiently. They are crucial in backend development to ensure data is organized and accessible.</p>
+                <ul>
+                    <li><strong>SQL Server</strong>: Microsoft’s relational database management system for storing structured data</li>
+                    <li><strong>MySQL</strong>: Open-source relational database management system for web applications</li>
+                    <li><strong>Microsoft SQL Server</strong>: Full-featured database server developed by Microsoft, used for managing data in a variety of applications</li>
+                </ul>
+            </div>
+
+            <!-- Software Development Tab Content -->
+            <div class="tab-pane fade" id="software" role="tabpanel" aria-labelledby="software-tab">
+                <h5>Software Development</h5>
+                <p>Software development is the process of designing, creating, and maintaining software applications. It involves the full lifecycle, from initial design to deployment and maintenance.</p>
+                <ul>
+                    <li><strong>Full-Stack Development</strong>: Involves working on both the frontend and backend, ensuring that both parts work harmoniously together</li>
+                    <li><strong>Web Application Development</strong>: Focuses on building applications that run in a web browser, using a mix of frontend and backend technologies</li>
+                    <li><strong>Performance Optimization</strong>: Enhances the performance of applications, ensuring faster load times and better scalability</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Include Bootstrap JS for Tab functionality -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <h2 class="section-title" data-aos="fade-up">Contact Me</h2>
+        <p class="text-center">Feel free to reach out for collaborations or inquiries. I'm always open to new opportunities!</p>
+        <div class="text-center">
+            <a href="mailto:shivrajrandive9281@gmail.com" class="contact-btn">Contact via Email</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Shivraj Randive. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1200 });
+    </script>
+</body>
+</html>

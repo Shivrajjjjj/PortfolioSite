@@ -1,0 +1,30 @@
+﻿@model IEnumerable<PortfolioSite.Models.Project>
+
+<div class="container">
+    <h2 class="text-center my-4">💻 My Projects</h2>
+
+    @if (!Model.Any())
+    {
+        <p class="text-center text-muted">No projects found. Please add some projects.</p>
+    }
+    else
+    {
+        <div class="row">
+            @foreach (var project in Model)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-lg border-0 rounded">
+                        <img src="@project.ImageURL" class="card-img-top" alt="@project.Title" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">@project.Title</h5>
+                            <p class="card-text text-muted">@project.Description</p>
+                            <a href="@project.GitHubLink" class="btn btn-dark btn-sm" target="_blank">
+                                <i class="fab fa-github"></i> View on GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
